@@ -36,7 +36,9 @@ public class Server extends UnicastRemoteObject implements Hello {
       // Bind the remote object's stub in the registry
 
       Registry registry = LocateRegistry.createRegistry(5099);
+
       registry.bind("Hello", obj);
+      System.err.println(registry.list()[0]);
 
       // Naming.rebind("rmi://127.0.0.1:5099/Hello", new Server());
 
